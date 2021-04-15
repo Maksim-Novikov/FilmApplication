@@ -45,6 +45,21 @@ class TopFilmFragment : BaseFragment(R.layout.top_film_screen) {
                 .addToBackStack(fragment::class.java.canonicalName)
                 .commitAllowingStateLoss()
         }
+
+        view.findViewById<Button>(R.id.mainSearch).setOnClickListener {
+            val fragment = SearchFragment()
+            parentFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    R.anim.slide_from_right,
+                    R.anim.slide_to_left,
+                    R.anim.slide_from_left,
+                    R.anim.slide_to_right
+                )
+                .replace(R.id.mainContainer, fragment, fragment::class.java.canonicalName)
+                .addToBackStack(fragment::class.java.canonicalName)
+                .commitAllowingStateLoss()
+
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

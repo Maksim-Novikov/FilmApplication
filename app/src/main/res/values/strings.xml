@@ -1,3 +1,30 @@
 <resources>
-  <string name="app_name">FilmApplication</string>
+    <string name="app_name">FilmApplication</string>
+
+    <string name="search_type_header">Что ищем?</string>
+    <string name="search_type_all">Всё</string>
+    <string name="search_type_films">Фильмы</string>
+    <string name="search_tv_show">ТВ шоу</string>
+    <string name="search_rating_header">Какой рейтинг?</string>
+    <string name="search_rating_hint">рейтинг</string>
+    <string name="search_from_text">от</string>
+    <string name="search_to_text">до</string>
+    <string name="search_year_header">Какой год?</string>
+    <string name="search_year_hint">год</string>
+    <string name="search_submit">Искать</string>
+    <string name="searchTitle">Поиск</string>
+
+
+    <string-array name="ratings">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
 </resources>
