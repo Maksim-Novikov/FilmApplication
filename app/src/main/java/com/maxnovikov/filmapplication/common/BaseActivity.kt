@@ -1,4 +1,4 @@
-package com.maxnovikov.filmapplication
+package com.maxnovikov.filmapplication.common
 
 import android.os.Bundle
 import android.util.Log

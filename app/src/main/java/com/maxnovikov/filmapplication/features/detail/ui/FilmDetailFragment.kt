@@ -1,4 +1,4 @@
-package com.maxnovikov.filmapplication
+package com.maxnovikov.filmapplication.features.detail.ui
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,9 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
+import com.maxnovikov.filmapplication.Film
+import com.maxnovikov.filmapplication.R
+import com.maxnovikov.filmapplication.common.BaseFragment
 
 class FilmDetailFragment : BaseFragment(R.layout.film_detail_screen) {
 

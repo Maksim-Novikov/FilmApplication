@@ -1,4 +1,4 @@
-package com.maxnovikov.filmapplication
+package com.maxnovikov.filmapplication.features.topFilms.ui
 
 import android.os.Bundle
 import android.view.View
@@ -6,8 +6,13 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.setFragmentResultListener
-import com.maxnovikov.filmapplication.FilmDetailFragment.Companion.FILM_DETAIL_RATING_KEY
-import com.maxnovikov.filmapplication.FilmDetailFragment.Companion.FILM_DETAIL_RESULT_KEY
+import com.maxnovikov.filmapplication.Film
+import com.maxnovikov.filmapplication.R
+import com.maxnovikov.filmapplication.common.BaseFragment
+import com.maxnovikov.filmapplication.features.detail.ui.FilmDetailFragment
+import com.maxnovikov.filmapplication.features.detail.ui.FilmDetailFragment.Companion.FILM_DETAIL_RATING_KEY
+import com.maxnovikov.filmapplication.features.detail.ui.FilmDetailFragment.Companion.FILM_DETAIL_RESULT_KEY
+import com.maxnovikov.filmapplication.features.search.ui.SearchFragment
 
 class TopFilmFragment : BaseFragment(R.layout.top_film_screen) {
 

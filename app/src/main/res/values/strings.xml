@@ -13,6 +13,8 @@
     <string name="search_year_hint">год</string>
     <string name="search_submit">Искать</string>
     <string name="searchTitle">Поиск</string>
+    <string name="year_from_more_than_to">Год \"от\" не может быть больше чем \"до\"</string>
+    <string name="saerch_success">Поиск произведён</string>
 
 
     <string-array name="ratings">

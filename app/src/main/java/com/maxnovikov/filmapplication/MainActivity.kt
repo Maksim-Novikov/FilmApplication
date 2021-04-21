@@ -1,6 +1,8 @@
 package com.maxnovikov.filmapplication
 
 import android.os.Bundle
+import com.maxnovikov.filmapplication.common.BaseActivity
+import com.maxnovikov.filmapplication.features.topFilms.ui.TopFilmFragment
 
 class MainActivity : BaseActivity() {
 

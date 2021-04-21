@@ -1,4 +1,4 @@
-package com.maxnovikov.filmapplication
+package com.maxnovikov.filmapplication.common
 
 import android.content.Context
 import android.os.Bundle
