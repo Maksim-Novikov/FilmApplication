@@ -16,6 +16,8 @@
     <string name="year_from_more_than_to">Год \"от\" не может быть больше чем \"до\"</string>
     <string name="saerch_success">Поиск произведён</string>
 
+    <string name="top_film_search">Поиск</string>
+
 
     <string-array name="ratings">
         <item>1</item>
