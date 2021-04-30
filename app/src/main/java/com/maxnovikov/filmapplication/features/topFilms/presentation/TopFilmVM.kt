@@ -3,7 +3,7 @@ package com.maxnovikov.filmapplication.features.topFilms.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.maxnovikov.filmapplication.Film
+import com.maxnovikov.filmapplication.entity.Film
 import com.maxnovikov.filmapplication.utils.SingleLiveEvent
 
 class TopFilmVM : ViewModel() {

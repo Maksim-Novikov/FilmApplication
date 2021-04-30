@@ -17,6 +17,7 @@
     <string name="saerch_success">Поиск произведён</string>
 
     <string name="top_film_search">Поиск</string>
+    <string name="top_films_favorites">Избранное</string>
 
 
     <string-array name="ratings">

@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.maxnovikov.filmapplication.Film
 import com.maxnovikov.filmapplication.databinding.TopFilmItemBinding
+import com.maxnovikov.filmapplication.entity.Film
 
 class TopFilmAdapter(private val onFilmClick: (Film) -> Unit) :
     ListAdapter<Film, ViewHolder>(

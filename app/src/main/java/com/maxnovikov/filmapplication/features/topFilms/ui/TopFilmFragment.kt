@@ -5,11 +5,12 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.maxnovikov.filmapplication.Film
 import com.maxnovikov.filmapplication.R
 import com.maxnovikov.filmapplication.common.BaseFragment
 import com.maxnovikov.filmapplication.databinding.TopFilmScreenBinding
+import com.maxnovikov.filmapplication.entity.Film
 import com.maxnovikov.filmapplication.features.detail.ui.FilmDetailFragment
+import com.maxnovikov.filmapplication.features.favorites.ui.FavoritesFragment
 import com.maxnovikov.filmapplication.features.search.ui.SearchFragment
 import com.maxnovikov.filmapplication.features.topFilms.presentation.TopFilmVM
 import com.maxnovikov.filmapplication.utils.navigateTo
@@ -31,6 +32,9 @@ class TopFilmFragment : BaseFragment(R.layout.top_film_screen) {
         }
         viewBinding.mainSearch.setOnClickListener {
             parentFragmentManager.navigateTo(SearchFragment())
+        }
+        viewBinding.topFilmsFavorites.setOnClickListener {
+            parentFragmentManager.navigateTo(FavoritesFragment())
         }
 
         with(viewBinding.topFilmsList) {

@@ -38,9 +38,19 @@
         android:id="@+id/filmDetailClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Закрыть∆"
+        android:text="Закрыть"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/filmDetailFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
