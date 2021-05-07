@@ -18,6 +18,7 @@
 
     <string name="top_film_search">Поиск</string>
     <string name="top_films_favorites">Избранное</string>
+    <string name="top_film_error">Что то пошло не так</string>
 
 
     <string-array name="ratings">

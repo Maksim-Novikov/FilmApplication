@@ -1,36 +1,37 @@
 package com.maxnovikov.filmapplication.features.topFilms.presentation
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.maxnovikov.filmapplication.domain.GetTopFilmsUseCase
 import com.maxnovikov.filmapplication.entity.Film
 import com.maxnovikov.filmapplication.utils.SingleLiveEvent
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.launch
 
-class TopFilmVM : ViewModel() {
+class TopFilmVM(
+    private val getTopFilmsUseCase: GetTopFilmsUseCase
+) : ViewModel() {
 
-    private var films = listOf(
-        Film("Джентельмены", 2020),
-        Film("Крик", 2002),
-        Film("Молчание ягнят", 2005),
-        Film("Властелин Колец", 2001),
-        Film("Генв человеческий", 2021),
-        Film("Майор Гром: Чумной Доктор", 2021),
-        Film("Чернобыль", 2020),
-        Film("Зеленая миля", 1999),
-        Film("Интерстеллар", 2014),
-        Film("Иван Васильевич меняет профессию", 1973),
-        Film("Тайна Коко", 2017),
-        Film("Карты, деньги, два ствола", 1998)
-    )
-
-    private val _filmsState = MutableLiveData(films)
-    val filmsState: LiveData<List<Film>> = _filmsState
+    private val _screenState = MutableLiveData<TopFilmScreenState>(TopFilmScreenState.Loading)
+    val screenState: LiveData<TopFilmScreenState> = _screenState
 
     private val _openDetail = SingleLiveEvent<Film>()
     val openDetail: LiveData<Film> = _openDetail
 
+    init {
+        viewModelScope.launch(CoroutineExceptionHandler { _, throwable ->
+            _screenState.value = TopFilmScreenState.Error(throwable)
+            Log.e("TopFilmVM", throwable.message, throwable)
+        }) {
+            val films = getTopFilmsUseCase()
+            _screenState.value = TopFilmScreenState.Success(films)
+        }
+    }
+
     fun onFilmClick(film: Film) {
         _openDetail.value = film
     }
-
 }
