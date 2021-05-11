@@ -8,8 +8,9 @@ import com.maxnovikov.filmapplication.entity.Film
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import javax.inject.Inject
 
-class FavoritesDaoImpl(
+class FavoritesDaoImpl @Inject constructor(
     private val sharedPreferences: SharedPreferences
 ) : FavoritesDao {
 

@@ -2,8 +2,9 @@ package com.maxnovikov.filmapplication.domain
 
 import com.maxnovikov.filmapplication.data.FilmApi
 import com.maxnovikov.filmapplication.entity.Film
+import javax.inject.Inject
 
-class GetTopFilmsUseCase(
+class GetTopFilmsUseCase @Inject constructor(
     private val filmApi: FilmApi
 ) {
 

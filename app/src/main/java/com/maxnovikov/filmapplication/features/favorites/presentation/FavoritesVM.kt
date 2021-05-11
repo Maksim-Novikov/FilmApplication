@@ -5,8 +5,11 @@ import androidx.lifecycle.ViewModel
 import com.maxnovikov.filmapplication.domain.FavoritesDao
 import com.maxnovikov.filmapplication.entity.Film
 import com.maxnovikov.filmapplication.utils.SingleLiveEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class FavoritesVM(
+@HiltViewModel
+class FavoritesVM @Inject constructor(
     private val favoritesDao: FavoritesDao
 ) : ViewModel() {
 

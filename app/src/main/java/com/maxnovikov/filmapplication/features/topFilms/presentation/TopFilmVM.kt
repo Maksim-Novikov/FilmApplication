@@ -8,10 +8,13 @@ import androidx.lifecycle.viewModelScope
 import com.maxnovikov.filmapplication.domain.GetTopFilmsUseCase
 import com.maxnovikov.filmapplication.entity.Film
 import com.maxnovikov.filmapplication.utils.SingleLiveEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class TopFilmVM(
+@HiltViewModel
+class TopFilmVM @Inject constructor(
     private val getTopFilmsUseCase: GetTopFilmsUseCase
 ) : ViewModel() {
 

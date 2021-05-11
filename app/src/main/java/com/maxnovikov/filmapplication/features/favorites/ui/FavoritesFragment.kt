@@ -3,29 +3,23 @@ package com.maxnovikov.filmapplication.features.favorites.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.maxnovikov.filmapplication.R
 import com.maxnovikov.filmapplication.common.BaseFragment
 import com.maxnovikov.filmapplication.databinding.FavoritesScreenBinding
-import com.maxnovikov.filmapplication.di.FavoriteDaoProvider
 import com.maxnovikov.filmapplication.features.detail.ui.FilmDetailFragment
 import com.maxnovikov.filmapplication.features.favorites.presentation.FavoritesVM
 import com.maxnovikov.filmapplication.features.topFilms.ui.TopFilmAdapter
 import com.maxnovikov.filmapplication.utils.navigateTo
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FavoritesFragment : BaseFragment(R.layout.favorites_screen) {
 
     private val viewBinding by viewBinding(FavoritesScreenBinding::bind)
-    private val viewModel by viewModels<FavoritesVM> {
-        object : ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return FavoritesVM(FavoriteDaoProvider.getDao(context!!)) as T
-            }
-        }
-    }
+    private val viewModel by viewModels<FavoritesVM>()
+
     private var favoritesAdapter: TopFilmAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -11,23 +11,22 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.maxnovikov.filmapplication.R
 import com.maxnovikov.filmapplication.common.BaseFragment
 import com.maxnovikov.filmapplication.databinding.FilmDetailScreenBinding
-import com.maxnovikov.filmapplication.di.FavoriteDaoProvider
 import com.maxnovikov.filmapplication.entity.Film
 import com.maxnovikov.filmapplication.features.detail.presentation.FilmDetailVM
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FilmDetailFragment : BaseFragment(R.layout.film_detail_screen) {
+
+    @Inject
+    lateinit var filmDetailVMFactory: FilmDetailVM.Factory
 
     private val viewBinding by viewBinding(FilmDetailScreenBinding::bind)
     private val viewModel by viewModels<FilmDetailVM> {
         object : ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return FilmDetailVM(
-                    favoritesDao = FavoriteDaoProvider.getDao(context!!),
-                    film = arguments?.getParcelable(FILM_DETAIL_DATA_KEY)!!
-
-                ) as T
-            }
-
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T =
+                filmDetailVMFactory.create(film = arguments?.getParcelable(FILM_DETAIL_DATA_KEY)!!) as T
         }
     }
 

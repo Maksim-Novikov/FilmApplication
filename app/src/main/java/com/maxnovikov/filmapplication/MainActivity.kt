@@ -3,7 +3,9 @@ package com.maxnovikov.filmapplication
 import android.os.Bundle
 import com.maxnovikov.filmapplication.common.BaseActivity
 import com.maxnovikov.filmapplication.features.topFilms.ui.TopFilmFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
